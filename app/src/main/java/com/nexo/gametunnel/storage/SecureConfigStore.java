@@ -8,6 +8,7 @@ import android.util.Base64;
 
 import com.nexo.gametunnel.model.Profile;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -87,7 +88,11 @@ public final class SecureConfigStore {
 
     private SecretKey getOrCreateKey() throws GeneralSecurityException {
         final KeyStore keyStore = KeyStore.getInstance(ANDROID_KEY_STORE);
-        keyStore.load(null);
+        try {
+            keyStore.load(null);
+        } catch (final IOException exception) {
+            throw new GeneralSecurityException("No se pudo abrir el almacén de claves", exception);
+        }
         final java.security.Key existing = keyStore.getKey(KEY_ALIAS, null);
         if (existing instanceof SecretKey) {
             return (SecretKey) existing;

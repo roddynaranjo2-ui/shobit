@@ -64,7 +64,7 @@ public final class TunnelController {
     private final Set<Listener> listeners = new CopyOnWriteArraySet<>();
 
     private volatile TunnelSnapshot snapshot;
-    private Config activeConfig;
+    private volatile Config activeConfig;
     private ScheduledFuture<?> statisticsTask;
     private ConnectivityManager.NetworkCallback networkCallback;
     private long networkMonitorGeneration;
@@ -104,7 +104,11 @@ public final class TunnelController {
 
     public void addListener(final Listener listener) {
         listeners.add(listener);
-        mainHandler.post(() -> listener.onTunnelSnapshot(snapshot));
+        mainHandler.post(() -> {
+            if (listeners.contains(listener)) {
+                listener.onTunnelSnapshot(snapshot);
+            }
+        });
     }
 
     public void removeListener(final Listener listener) {
@@ -168,6 +172,15 @@ public final class TunnelController {
         } catch (final Exception error) {
             stopStatistics();
             unregisterNetworkMonitor();
+            // GoBackend can fail after creating the TUN but before setState() returns. A best-effort
+            // teardown prevents that partially started VPN from surviving behind an error state.
+            if (activeConfig != null) {
+                try {
+                    backend.setState(tunnel, Tunnel.State.DOWN, null);
+                } catch (final Exception ignored) {
+                    // Preserve the original, more useful connection error below.
+                }
+            }
             activeConfig = null;
             update(TunnelSnapshot.Status.ERROR, friendlyConnectionError(error));
         }
@@ -487,7 +500,11 @@ public final class TunnelController {
     private void publish(final TunnelSnapshot value) {
         snapshot = value;
         for (final Listener listener : listeners) {
-            mainHandler.post(() -> listener.onTunnelSnapshot(value));
+            mainHandler.post(() -> {
+                if (listeners.contains(listener)) {
+                    listener.onTunnelSnapshot(value);
+                }
+            });
         }
     }
 

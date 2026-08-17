@@ -54,6 +54,14 @@ if [[ -z "$PUBLIC_ENDPOINT" ]]; then
   echo "Falta --endpoint con la IPv4 pública o dominio del VPS." >&2
   exit 2
 fi
+if ! [[ "$PUBLIC_ENDPOINT" =~ ^[A-Za-z0-9.-]+$ ]]; then
+  echo "Endpoint inválido. Usa una IPv4 pública o un dominio, sin puerto." >&2
+  exit 2
+fi
+if ! [[ "$DNS_SERVERS" =~ ^[0-9A-Fa-f:.,[:space:]]+$ ]]; then
+  echo "Lista DNS inválida." >&2
+  exit 2
+fi
 if ! [[ "$WG_PORT" =~ ^[0-9]+$ ]] || (( WG_PORT < 1 || WG_PORT > 65535 )); then
   echo "Puerto UDP inválido: $WG_PORT" >&2
   exit 2
@@ -117,7 +125,6 @@ PresharedKey = ${PRESHARED_KEY}
 AllowedIPs = ${CLIENT_ADDRESS}
 EOF
 chmod 600 "${WG_CONFIG}.new"
-mv -f "${WG_CONFIG}.new" "$WG_CONFIG"
 
 cat > "${CLIENT_CONFIG}.new" <<EOF
 [Interface]
@@ -134,6 +141,19 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 EOF
 chmod 600 "${CLIENT_CONFIG}.new"
+
+# Back up both old configurations before replacing either one. Nanoseconds prevent a rapid
+# second --force invocation from overwriting the previous backup on supported Ubuntu hosts.
+BACKUP_SUFFIX="$(date -u +%Y%m%dT%H%M%S%NZ)"
+if [[ -e "$WG_CONFIG" ]]; then
+  install -m 600 "$WG_CONFIG" "${WG_CONFIG}.backup-${BACKUP_SUFFIX}"
+  echo "Respaldo del servidor: ${WG_CONFIG}.backup-${BACKUP_SUFFIX}"
+fi
+if [[ -e "$CLIENT_CONFIG" ]]; then
+  install -m 600 "$CLIENT_CONFIG" "${CLIENT_CONFIG}.backup-${BACKUP_SUFFIX}"
+  echo "Respaldo del cliente: ${CLIENT_CONFIG}.backup-${BACKUP_SUFFIX}"
+fi
+mv -f "${WG_CONFIG}.new" "$WG_CONFIG"
 mv -f "${CLIENT_CONFIG}.new" "$CLIENT_CONFIG"
 
 cat > /etc/sysctl.d/99-nexo-wireguard.conf <<'EOF'

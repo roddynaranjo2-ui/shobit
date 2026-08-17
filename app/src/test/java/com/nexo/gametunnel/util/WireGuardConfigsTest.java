@@ -55,7 +55,7 @@ public final class WireGuardConfigsTest {
                 "25",
                 "1280");
 
-        assertTrue(normalized.contains("PresharedKey = " + PRESHARED_KEY));
+        assertTrue(normalized.contains("PreSharedKey = " + PRESHARED_KEY));
         assertTrue(normalized.contains("MTU = 1280"));
         assertEquals(1, WireGuardConfigs.parse(normalized).getPeers().size());
     }

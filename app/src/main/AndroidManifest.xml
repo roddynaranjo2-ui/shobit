@@ -6,6 +6,14 @@
 
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
+    <!-- Android 11+ package visibility: only launchable apps are exposed to the per-app picker. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
     <application
         android:name=".NexoApplication"
         android:allowBackup="false"
@@ -30,12 +38,4 @@
             </intent-filter>
         </activity>
     </application>
-
-    <!-- Android 11+ package visibility: only launchable apps are exposed to the per-app picker. -->
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent>
-    </queries>
 </manifest>

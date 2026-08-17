@@ -71,7 +71,7 @@ La guía completa, verificación y mantenimiento están en [docs/VPS_UBUNTU.md](
 4. Pulsa **Conectar** y acepta una vez el diálogo VPN de Android.
 5. Espera un handshake reciente y abre el juego.
 
-Solo el paquete seleccionado entra al túnel. Cambiar de aplicación mientras está conectado reinicia la sesión VPN de forma controlada para aplicar la nueva lista.
+Solo el paquete seleccionado entra al túnel. Para cambiar de aplicación, desconecta primero; la nueva lista se aplica en la conexión siguiente. No actives **Bloquear conexiones sin VPN** en los ajustes de VPN de Android: el modo de bloqueo del sistema puede impedir la conexión normal de las demás aplicaciones.
 
 ## Recuperación y diagnóstico
 

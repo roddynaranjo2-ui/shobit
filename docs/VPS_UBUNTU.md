@@ -49,7 +49,7 @@ Sustituye `203.0.113.10` por la IPv4 real. Opciones útiles:
   --mtu 1280
 ```
 
-El script se detiene si `/etc/wireguard/wg0.conf` ya existe. `--force` lo reemplaza y revoca el perfil anterior; úsalo únicamente si esa es tu intención.
+El script se detiene si `/etc/wireguard/wg0.conf` ya existe. `--force` respalda las configuraciones actuales con un sufijo UTC, las reemplaza y revoca el perfil anterior; úsalo únicamente si esa es tu intención.
 
 ## 4. Copiar el perfil
 

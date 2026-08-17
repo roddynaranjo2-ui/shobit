@@ -120,7 +120,7 @@ public final class WireGuardConfigs {
             text.append("PresharedKey = ").append(presharedKey.trim()).append('\n');
         }
         text.append("Endpoint = ").append(endpoint).append('\n')
-                .append("AllowedIPs = ").append(allowedIps.isBlank() ? "0.0.0.0/0, ::/0" : allowedIps.trim()).append('\n')
+                .append("AllowedIPs = ").append(allowedIps.isBlank() ? "0.0.0.0/0" : allowedIps.trim()).append('\n')
                 .append("PersistentKeepalive = ").append(keepalive.isBlank() ? "25" : keepalive.trim()).append('\n');
         return normalizeForStorage(text.toString());
     }

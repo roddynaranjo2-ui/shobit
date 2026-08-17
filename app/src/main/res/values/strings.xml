@@ -63,7 +63,7 @@
     <string name="no_apps">No se encontraron aplicaciones con icono de inicio.</string>
 
     <string name="config_text_title">Pegar o editar perfil WireGuard</string>
-    <string name="config_text_hint">[Interface]\nPrivateKey = …\nAddress = 10.66.66.2/32\n\n[Peer]\nPublicKey = …\nEndpoint = vps:51820\nAllowedIPs = 0.0.0.0/0, ::/0\nPersistentKeepalive = 25</string>
+    <string name="config_text_hint">[Interface]\nPrivateKey = …\nAddress = 10.66.66.2/32\n\n[Peer]\nPublicKey = …\nEndpoint = vps:51820\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25</string>
     <string name="config_security_note">La pantalla queda protegida contra capturas mientras las claves son visibles.</string>
     <string name="save_profile">GUARDAR PERFIL</string>
 

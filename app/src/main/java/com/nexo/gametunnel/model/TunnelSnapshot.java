@@ -80,7 +80,8 @@ public final class TunnelSnapshot {
 
     public boolean isActive() {
         return status == Status.CONNECTING || status == Status.CONNECTED
-                || status == Status.NO_NETWORK || status == Status.RECOVERING;
+                || status == Status.NO_NETWORK || status == Status.RECOVERING
+                || status == Status.DISCONNECTING;
     }
 
     public TunnelSnapshot with(
