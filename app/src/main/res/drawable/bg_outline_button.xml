@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape><solid android:color="#0D1511"/><stroke android:width="1dp" android:color="#213129"/><corners android:radius="10dp"/></shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape><solid android:color="#20382C"/><stroke android:width="1dp" android:color="@color/nexo_green"/><corners android:radius="10dp"/></shape>
+    </item>
+    <item>
+        <shape><solid android:color="@color/nexo_surface_high"/><stroke android:width="1dp" android:color="@color/nexo_border"/><corners android:radius="10dp"/></shape>
+    </item>
+</selector>

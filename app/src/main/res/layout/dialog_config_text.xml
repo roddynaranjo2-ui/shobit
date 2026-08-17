@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <TextView style="@style/NexoCardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/config_text_title" />
+    <TextView style="@style/NexoBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/config_security_note" android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/config_text"
+        style="@style/NexoField"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_weight="1"
+        android:fontFamily="monospace"
+        android:gravity="top|start"
+        android:hint="@string/config_text_hint"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textNoSuggestions|textVisiblePassword"
+        android:scrollbars="vertical"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/config_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/nexo_red"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+        <Button android:id="@+id/cancel_config" style="@style/NexoOutlineButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginRight="5dp" android:layout_weight="1" android:text="@string/cancel" />
+        <Button android:id="@+id/save_config" style="@style/NexoOutlineButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_weight="1.35" android:text="@string/save_profile" android:textColor="@color/nexo_green" />
+    </LinearLayout>
+</LinearLayout>

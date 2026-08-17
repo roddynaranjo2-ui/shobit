@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nexo Game Tunnel</string>
+    <string name="app_subtitle">ENLACE TÁCTICO · WIREGUARD</string>
+    <string name="connected">Conectado</string>
+    <string name="connecting">Conectando</string>
+    <string name="disconnected">Desconectado</string>
+    <string name="disconnecting">Desconectando</string>
+    <string name="no_network">Sin red</string>
+    <string name="recovering">Recuperando</string>
+    <string name="error">Requiere atención</string>
+    <string name="connect">CONECTAR</string>
+    <string name="disconnect">DESCONECTAR</string>
+    <string name="retry">REINTENTAR</string>
+    <string name="connection_title">ESTADO DEL ENLACE</string>
+    <string name="network">RED</string>
+    <string name="handshake">HANDSHAKE</string>
+    <string name="received">RECIBIDO</string>
+    <string name="sent">ENVIADO</string>
+    <string name="protected_app">APLICACIÓN PROTEGIDA</string>
+    <string name="per_app_note">Solo esta aplicación atravesará el túnel. El resto del teléfono conserva su conexión normal.</string>
+    <string name="choose_other">CAMBIAR APLICACIÓN</string>
+    <string name="server_profile">PERFIL DEL VPS</string>
+    <string name="profile_import_note">Carga el perfil cliente generado en tu VPS. La clave privada se cifra con Android Keystore.</string>
+    <string name="import_conf">IMPORTAR .CONF</string>
+    <string name="paste_text">PEGAR / EDITAR</string>
+    <string name="manual_config">FORMULARIO MANUAL</string>
+    <string name="delete_profile">BORRAR PERFIL</string>
+    <string name="no_profile">Sin perfil. Despliega el VPS y luego importa client.conf.</string>
+    <string name="adaptive_recovery">RECUPERACIÓN ADAPTATIVA</string>
+    <string name="adaptive_explanation">Nexo deja que WireGuard haga roaming al cambiar entre datos y Wi‑Fi. Solo reconstruye el túnel si hay tráfico saliente sostenido sin respuesta después del período de gracia. No usa ping continuo.</string>
+    <string name="recovery">RECUPERACIONES</string>
+    <string name="no_restarts">Ningún reinicio en esta sesión</string>
+    <plurals name="recovery_count">
+        <item quantity="one">%d recuperación en esta sesión</item>
+        <item quantity="other">%d recuperaciones en esta sesión</item>
+    </plurals>
+    <string name="vpn_settings">AJUSTES VPN DE ANDROID</string>
+    <string name="honest_limit">Una VPN puede mejorar la ruta y recuperar microcortes, pero no puede conservar la sesión durante una caída total de ETECSA ni si el servidor del juego rechaza un cambio de IP o ruta.</string>
+    <string name="profile_saved">Perfil cifrado y guardado</string>
+    <string name="profile_required_title">Falta el perfil del VPS</string>
+    <string name="profile_required_message">Primero despliega WireGuard en un VPS y carga el archivo client.conf mediante una de las tres opciones de configuración.</string>
+    <string name="vpn_permission_denied">Android necesita tu autorización para crear la VPN</string>
+    <string name="vpn_settings_unavailable">No se pudieron abrir los ajustes VPN</string>
+    <string name="encrypted_profile_error">No se pudo abrir el perfil cifrado</string>
+    <string name="could_not_save">No se pudo guardar</string>
+    <string name="could_not_delete">No se pudo borrar</string>
+    <string name="import_failed">No se pudo importar</string>
+    <string name="understood">ENTENDIDO</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="delete">BORRAR</string>
+    <string name="delete_profile_title">¿Borrar el perfil seguro?</string>
+    <string name="delete_profile_message">Se eliminarán la configuración WireGuard y la clave privada cifrada de este dispositivo.</string>
+    <string name="never">Nunca</string>
+    <string name="just_now">Ahora mismo</string>
+    <string name="seconds_ago">Hace %d s</string>
+    <string name="minutes_ago">Hace %d min</string>
+    <string name="hours_ago">Hace %d h</string>
+
+    <string name="choose_app_question">¿Qué aplicación debe usar el túnel?</string>
+    <string name="choose_app_hint">Arena Breakout Global aparece primero si está instalado. Toca una opción.</string>
+    <string name="search_apps">Buscar por nombre o paquete</string>
+    <string name="no_apps">No se encontraron aplicaciones con icono de inicio.</string>
+
+    <string name="config_text_title">Pegar o editar perfil WireGuard</string>
+    <string name="config_text_hint">[Interface]\nPrivateKey = …\nAddress = 10.66.66.2/32\n\n[Peer]\nPublicKey = …\nEndpoint = vps:51820\nAllowedIPs = 0.0.0.0/0, ::/0\nPersistentKeepalive = 25</string>
+    <string name="config_security_note">La pantalla queda protegida contra capturas mientras las claves son visibles.</string>
+    <string name="save_profile">GUARDAR PERFIL</string>
+
+    <string name="manual_question">Completa los datos del perfil cliente</string>
+    <string name="manual_hint">Los datos salen del script del VPS. Nexo validará las claves y direcciones antes de guardar.</string>
+    <string name="private_key">Clave privada del cliente</string>
+    <string name="client_address">Dirección cliente (ej. 10.66.66.2/32)</string>
+    <string name="dns_servers">DNS (ej. 1.1.1.1, 1.0.0.1)</string>
+    <string name="peer_public_key">Clave pública del servidor</string>
+    <string name="preshared_key">Clave precompartida (opcional)</string>
+    <string name="endpoint_host">IP o dominio del VPS</string>
+    <string name="endpoint_port">Puerto</string>
+    <string name="allowed_ips">AllowedIPs</string>
+    <string name="keepalive">PersistentKeepalive</string>
+    <string name="mtu">MTU</string>
+</resources>

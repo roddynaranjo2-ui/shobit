@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nexo_background"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="18dp"
+        android:paddingTop="18dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="42dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="18dp">
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_logo"
+                android:gravity="center"
+                android:text="N"
+                android:textColor="@color/nexo_green"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/nexo_text"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/NexoSectionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/app_subtitle" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                style="@style/NexoSectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connection_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/status_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_status_dot" />
+
+                <TextView
+                    android:id="@+id/status_title"
+                    style="@style/NexoCardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/disconnected" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/status_detail"
+                style="@style/NexoBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Listo" />
+
+            <Button
+                android:id="@+id/connect_button"
+                android:layout_width="172dp"
+                android:layout_height="172dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_connect_button"
+                android:letterSpacing="0.12"
+                android:stateListAnimator="@null"
+                android:text="@string/connect"
+                android:textColor="@color/nexo_ink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/network" />
+                    <TextView android:id="@+id/transport_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:ellipsize="end" android:maxLines="1" android:text="—" android:textColor="@color/nexo_text" android:textSize="14sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/handshake" />
+                    <TextView android:id="@+id/handshake_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:ellipsize="end" android:maxLines="1" android:text="@string/never" android:textColor="@color/nexo_text" android:textSize="14sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/received" />
+                    <TextView android:id="@+id/rx_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="0 B" android:textColor="@color/nexo_text" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sent" />
+                    <TextView android:id="@+id/tx_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="0 B" android:textColor="@color/nexo_text" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/protected_app" />
+            <TextView android:id="@+id/selected_app_label" style="@style/NexoCardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Arena Breakout Global" />
+            <TextView android:id="@+id/selected_app_package" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:fontFamily="monospace" android:text="com.proximabeta.mf.uamo" android:textColor="@color/nexo_green" android:textSize="12sp" />
+            <TextView style="@style/NexoBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/per_app_note" />
+            <Button android:id="@+id/choose_app_button" style="@style/NexoOutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/choose_other" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/server_profile" />
+            <TextView android:id="@+id/profile_summary" style="@style/NexoCardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/no_profile" android:textSize="16sp" />
+            <TextView style="@style/NexoBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/profile_import_note" />
+            <Button android:id="@+id/import_config_button" style="@style/NexoOutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/import_conf" />
+            <Button android:id="@+id/paste_config_button" style="@style/NexoOutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:text="@string/paste_text" />
+            <Button android:id="@+id/manual_config_button" style="@style/NexoOutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:text="@string/manual_config" />
+            <Button android:id="@+id/delete_profile_button" style="@style/NexoDangerButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:text="@string/delete_profile" android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView style="@style/NexoSectionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adaptive_recovery" />
+            <TextView style="@style/NexoBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/adaptive_explanation" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/recovery" android:textColor="@color/nexo_text_secondary" android:textSize="11sp" android:textStyle="bold" />
+            <TextView android:id="@+id/recovery_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/no_restarts" android:textColor="@color/nexo_text" android:textSize="14sp" android:textStyle="bold" />
+            <Button android:id="@+id/vpn_settings_button" style="@style/NexoOutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/vpn_settings" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/NexoBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/honest_limit"
+            android:textColor="@color/nexo_muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

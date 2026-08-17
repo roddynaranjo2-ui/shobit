@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nexo_background">#080D0B</color>
+    <color name="nexo_surface">#111A16</color>
+    <color name="nexo_surface_high">#18251F</color>
+    <color name="nexo_border">#2A4036</color>
+    <color name="nexo_green">#70F0A2</color>
+    <color name="nexo_green_dark">#163A28</color>
+    <color name="nexo_amber">#F4BE5B</color>
+    <color name="nexo_red">#FF6B6B</color>
+    <color name="nexo_ink">#07120B</color>
+    <color name="nexo_text">#F1F7F3</color>
+    <color name="nexo_text_secondary">#9FB4A8</color>
+    <color name="nexo_muted">#60756A</color>
+    <color name="transparent">#00000000</color>
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Nexo" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:colorAccent">@color/nexo_green</item>
+        <item name="android:windowBackground">@color/nexo_background</item>
+        <item name="android:navigationBarColor">@color/nexo_background</item>
+        <item name="android:statusBarColor">@color/nexo_background</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="NexoDialog" parent="android:style/Theme.Material.Dialog.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:colorAccent">@color/nexo_green</item>
+        <item name="android:textColorPrimary">@color/nexo_text</item>
+        <item name="android:textColorSecondary">@color/nexo_text_secondary</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+    <style name="NexoAlertDialog" parent="android:style/Theme.Material.Dialog.Alert">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:colorAccent">@color/nexo_green</item>
+        <item name="android:textColorPrimary">@color/nexo_text</item>
+        <item name="android:textColorSecondary">@color/nexo_text_secondary</item>
+    </style>
+
+    <style name="NexoSectionLabel">
+        <item name="android:textColor">@color/nexo_green</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.13</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+
+    <style name="NexoCardTitle">
+        <item name="android:textColor">@color/nexo_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+
+    <style name="NexoBody">
+        <item name="android:textColor">@color/nexo_text_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+
+    <style name="NexoOutlineButton" parent="android:style/Widget.Material.Button.Borderless">
+        <item name="android:background">@drawable/bg_outline_button</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="NexoDangerButton" parent="NexoOutlineButton">
+        <item name="android:textColor">@color/nexo_red</item>
+        <item name="android:background">@drawable/bg_danger_button</item>
+    </style>
+
+    <style name="NexoField" parent="android:style/Widget.Material.EditText">
+        <item name="android:background">@drawable/bg_field</item>
+        <item name="android:textColor">@color/nexo_text</item>
+        <item name="android:textColorHint">@color/nexo_muted</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+</resources>
