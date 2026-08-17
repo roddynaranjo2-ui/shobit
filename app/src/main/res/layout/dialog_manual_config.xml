@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <TextView style="@style/NexoCardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/manual_question" />
+    <TextView style="@style/NexoBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/manual_hint" android:textSize="12sp" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="12dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="4dp">
+            <EditText android:id="@+id/private_key" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="monospace" android:hint="@string/private_key" android:importantForAutofill="no" android:inputType="textPassword" android:maxLines="1" />
+            <EditText android:id="@+id/client_address" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:fontFamily="monospace" android:hint="@string/client_address" android:inputType="textVisiblePassword" android:maxLines="1" />
+            <EditText android:id="@+id/dns_servers" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:fontFamily="monospace" android:hint="@string/dns_servers" android:inputType="textVisiblePassword" android:maxLines="1" android:text="1.1.1.1, 1.0.0.1" />
+            <EditText android:id="@+id/peer_public_key" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:fontFamily="monospace" android:hint="@string/peer_public_key" android:inputType="textVisiblePassword" android:maxLines="1" />
+            <EditText android:id="@+id/preshared_key" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:fontFamily="monospace" android:hint="@string/preshared_key" android:importantForAutofill="no" android:inputType="textPassword" android:maxLines="1" />
+            <EditText android:id="@+id/endpoint_host" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:hint="@string/endpoint_host" android:inputType="textUri" android:maxLines="1" />
+            <EditText android:id="@+id/endpoint_port" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:hint="@string/endpoint_port" android:inputType="number" android:maxLines="1" android:text="51820" />
+            <EditText android:id="@+id/allowed_ips" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:fontFamily="monospace" android:hint="@string/allowed_ips" android:inputType="textVisiblePassword" android:maxLines="1" android:text="0.0.0.0/0" />
+            <EditText android:id="@+id/keepalive" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:hint="@string/keepalive" android:inputType="number" android:maxLines="1" android:text="25" />
+            <EditText android:id="@+id/mtu" style="@style/NexoField" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:hint="@string/mtu" android:inputType="number" android:maxLines="1" android:text="1280" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView android:id="@+id/manual_error" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/nexo_red" android:textSize="13sp" android:visibility="gone" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+        <Button android:id="@+id/cancel_manual" style="@style/NexoOutlineButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginRight="5dp" android:layout_weight="1" android:text="@string/cancel" />
+        <Button android:id="@+id/save_manual" style="@style/NexoOutlineButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_weight="1.35" android:text="@string/save_profile" android:textColor="@color/nexo_green" />
+    </LinearLayout>
+</LinearLayout>
